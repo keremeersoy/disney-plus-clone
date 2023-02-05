@@ -8,22 +8,31 @@ import {
   faTv,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 
-export default function navbar() {
+export default function Navbar() {
+  const navigate = useNavigate();
   return (
     <div className="sticky h-[72px] bg-[#0e0b14] px-9 flex items-center place-content-between">
-      <div className="flex items-center gap-10 text-sm font-bold">
+      <div className="flex items-center gap-10 text-sm font-bold cursor-pointer">
         <img
+          onClick={() => navigate("/")}
           src="https://cdn.worldvectorlogo.com/logos/disney--1.svg"
           alt="Disney SVG"
           className="h-12"
         />
 
-        <div className="text-white cursor-pointer lg:gap-4 items-center flex hover:scale-110 duration-200">
+        <div
+          onClick={() => navigate("/")}
+          className="text-white cursor-pointer lg:gap-4 items-center flex hover:scale-110 duration-200"
+        >
           <FontAwesomeIcon icon={faHouse} />
           <div className="hidden lg:block">ANA SAYFA</div>
         </div>
-        <div className="text-white cursor-pointer lg:gap-4 items-center flex hover:scale-110 duration-200">
+        <div
+          onClick={() => navigate("/search")}
+          className="text-white cursor-pointer lg:gap-4 items-center flex hover:scale-110 duration-200"
+        >
           <FontAwesomeIcon icon={faMagnifyingGlass} />
           <div className="hidden lg:block">ARAMA</div>
         </div>
