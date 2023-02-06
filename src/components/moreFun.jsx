@@ -29,6 +29,7 @@ const MoreFun = ({ movies }) => {
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   className="rounded-md h-80 hover:scale-110 duration-300 cursor-pointer shadow-2xl shadow-black"
+                  alt=""
                 ></img>
               </div>
             );

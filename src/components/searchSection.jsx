@@ -6,20 +6,19 @@ const SearchSection = () => {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
 
-  const API_KEY = process.env.REACT_APP_API_KEY;
-
-  const getData = async () => {
-    const data = await fetch(
-      query === ""
-        ? `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
-        : `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}`
-    );
-    const allMovies = await data.json();
-    // console.log(allMovies.results);
-    setMovies(allMovies.results.filter((movie) => movie.backdrop_path));
-  };
-
   useEffect(() => {
+    const API_KEY = process.env.REACT_APP_API_KEY;
+
+    const getData = async () => {
+      const data = await fetch(
+        query === ""
+          ? `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
+          : `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}`
+      );
+      const allMovies = await data.json();
+      // console.log(allMovies.results);
+      setMovies(allMovies.results.filter((movie) => movie.backdrop_path));
+    };
     getData();
   }, [query]);
 
@@ -53,6 +52,7 @@ const SearchSection = () => {
                     <img
                       src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
                       className="rounded-md hover:scale-105 duration-300"
+                      alt=""
                     ></img>
                     <div className="absolute bottom-0 text-white font-semibold backdrop-brightness-50 w-full p-2 rounded-b-md hover:rounded-md duration-300 place-content-between flex">
                       <span>{movie.title}</span>

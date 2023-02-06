@@ -5,24 +5,23 @@ import Navbar from "../components/navbar";
 import MainCarousel from "../components/mainCarousel";
 import MoreFun from "../components/moreFun";
 import Footer from "../components/footer";
-
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+// import { Carousel } from "react-responsive-carousel";
 
 function Home() {
   const [movies, setMovies] = useState([]);
-  const API_KEY = process.env.REACT_APP_API_KEY;
-
-  const getData = async () => {
-    const data = await fetch(
-      `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
-    );
-    const allMovies = await data.json();
-    // console.log(allMovies);
-    setMovies(allMovies.results);
-  };
 
   useEffect(() => {
+    const API_KEY = process.env.REACT_APP_API_KEY;
+    const getData = async () => {
+      const data = await fetch(
+        `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
+      );
+      const allMovies = await data.json();
+      // console.log(allMovies);
+      setMovies(allMovies.results);
+    };
+
     getData();
   }, []);
 

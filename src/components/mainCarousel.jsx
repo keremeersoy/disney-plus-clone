@@ -33,7 +33,10 @@ export default function MainCarousel() {
             className={`relative  duration-200 mx-4 cursor-pointer hover:scale-110 z-10 `}
             onClick={() => setPrimary(0)}
           >
-            <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/E53A80731FCE401B15C7031D0E69A90E340F8FA60F8DA788159A869E71C2A8F4/compose?width=1440&aspectRatio=3.91&format=jpeg&label=391_scrim" />
+            <img
+              src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/E53A80731FCE401B15C7031D0E69A90E340F8FA60F8DA788159A869E71C2A8F4/compose?width=1440&aspectRatio=3.91&format=jpeg&label=391_scrim"
+              alt="familyguy"
+            />
             <p className="top-40 left-32 absolute text-7xl font-bold text-white">
               FAMILY GUY
             </p>
@@ -43,7 +46,10 @@ export default function MainCarousel() {
             className={`relative  duration-200 mx-4 cursor-pointer hover:scale-110 z-10 `}
             onClick={() => setPrimary(1)}
           >
-            <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/EDC670EA88F660822AECD8D3FFA4B3D3D1E666BCDC86F6D79DB11BE78565E26D/compose?width=1440&aspectRatio=3.91&format=jpeg&label=georiginal_391_scrim" />
+            <img
+              src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/EDC670EA88F660822AECD8D3FFA4B3D3D1E666BCDC86F6D79DB11BE78565E26D/compose?width=1440&aspectRatio=3.91&format=jpeg&label=georiginal_391_scrim"
+              alt="extraordinary"
+            />
             <p className="top-40 left-8 absolute text-7xl font-bold text-white">
               EXTRAORDINARY
             </p>
@@ -53,7 +59,10 @@ export default function MainCarousel() {
             className={`relative duration-200 mx-4 cursor-pointer hover:scale-110 z-10 `}
             onClick={() => setPrimary(2)}
           >
-            <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D119042E56A928CFA86A5E5D2E2E74F53932E2E1DA604143456E1B5F8F8FBC16/compose?width=1440&aspectRatio=3.91&format=jpeg&label=391_scrim" />
+            <img
+              src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D119042E56A928CFA86A5E5D2E2E74F53932E2E1DA604143456E1B5F8F8FBC16/compose?width=1440&aspectRatio=3.91&format=jpeg&label=391_scrim"
+              alt="thewalkingdead"
+            />
             <p className="top-36 left-24 absolute text-4xl font-bold text-white">
               THE
             </p>

@@ -14,6 +14,7 @@ const popularMovies = ({ movie }) => {
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
         className="rounded-md hover:scale-105 duration-300"
+        alt=""
       ></img>
       <div className="absolute bottom-0 text-white font-semibold backdrop-brightness-50 w-full p-2 rounded-b-md hover:rounded-md duration-300 place-content-between flex">
         <span>{movie.title}</span>
