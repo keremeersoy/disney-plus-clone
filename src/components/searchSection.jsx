@@ -6,20 +6,22 @@ const SearchSection = () => {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    const API_KEY = process.env.REACT_APP_API_KEY;
+  const API_KEY = process.env.REACT_APP_API_KEY;
 
-    const getData = async () => {
-      const data = await fetch(
-        query === ""
-          ? `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
-          : `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}`
-      );
-      const allMovies = await data.json();
-      // console.log(allMovies.results);
-      setMovies(allMovies.results.filter((movie) => movie.backdrop_path));
-    };
+  const getData = async () => {
+    const data = await fetch(
+      query === ""
+        ? `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
+        : `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}`
+    );
+    const allMovies = await data.json();
+    // console.log(allMovies.results);
+    setMovies(allMovies.results.filter((movie) => movie.backdrop_path));
+  };
+
+  useEffect(() => {
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
   return (

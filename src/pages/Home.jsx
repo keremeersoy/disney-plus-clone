@@ -10,19 +10,19 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 
 function Home() {
   const [movies, setMovies] = useState([]);
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const getData = async () => {
+    const data = await fetch(
+      `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
+    );
+    const allMovies = await data.json();
+    // console.log(allMovies);
+    setMovies(allMovies.results);
+  };
 
   useEffect(() => {
-    const API_KEY = process.env.REACT_APP_API_KEY;
-    const getData = async () => {
-      const data = await fetch(
-        `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
-      );
-      const allMovies = await data.json();
-      // console.log(allMovies);
-      setMovies(allMovies.results);
-    };
-
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
