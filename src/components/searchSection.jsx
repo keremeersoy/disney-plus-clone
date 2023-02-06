@@ -6,9 +6,8 @@ const SearchSection = () => {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
 
-  const API_KEY = process.env.REACT_APP_API_KEY;
-
   const getData = async () => {
+    const API_KEY = process.env.REACT_APP_API_KEY;
     const data = await fetch(
       query === ""
         ? `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
