@@ -25,7 +25,7 @@ const MoreFun = ({ movies }) => {
         <div className="absolute top-9 right-24 grid grid-cols-5 gap-6">
           {movies.slice(5, 10).map((movie) => {
             return (
-              <div>
+              <div key={movie.id}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   className="rounded-md h-80 hover:scale-110 duration-300 cursor-pointer shadow-2xl shadow-black"
